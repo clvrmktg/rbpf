@@ -1,0 +1,87 @@
+extends ../../layout/_layout
+
+block var
+  - pageTitle = 'About Us'
+  - description = 'This is a template'
+  - about = 'current'
+
+  //- This works but I'm repeating myself.
+  - crumbs = {'About Us':'last'}
+
+block content
+
+  main#main(class='[ main ]')
+
+    include ../../partials/_hero
+
+    div(class='[ layout sidebar--right ][ x--wide grid gc--3 gr--2 py--5 ]')
+
+      article(class='[ content ]')
+
+        h2 About the Royal Bahamas Police Force (RBPF)
+
+        p Established on March 1st, 1840, the Royal Bahamas Police Force (RBPF) has evolved from its humble beginnings into a modern and intricate 21st-century law enforcement agency. The force was founded by sixteen men under the leadership of Inspector General John Pinder, with the initial patrol focused on New Providence.
+
+        p The early force, non-military in nature, grew in strength throughout the 19th century, providing essential services to the islands. Over time, the RBPF expanded its reach beyond New Providence, now serving the entire archipelago of over 700 islands and cays that span 100,000 square miles in the Atlantic.
+
+        p Today, the RBPF operates under the authority of The Police Force Act 2009, with a workforce exceeding 4,000 officers, reserves, and police civilians. The force is organized into three districts: New Providence, Northern Bahamas, and the Family Islands, with its headquarters located on East Street north, New Providence.
+
+
+        h2 General Duties
+
+        p The RBPF, rooted in a community policing philosophy, is committed to a broad range of duties aimed at ensuring the safety and well-being of the community. From the 24-hour policing of the Colony in the 1840s to the present, where officers focus on maintaining law and order, preserving peace, preventing and detecting crime, apprehending offenders, and enforcing laws, the RBPF remains dedicated to its mandate.
+
+        p As the force embraces professionalism, courage, integrity, and loyalty, it is ever-mindful of the changing environment, open to justified criticism, and committed to continuous improvement. The RBPF strives to create a safe and just society, free from the adverse effects of crime, where the quality of life is safeguarded for all.
+
+
+        h2 Mission and Vision
+
+        p 
+          strong Our Vision:
+          |  To make The Bahamas a safer place to live, work, visit, and play.
+
+        p 
+          strong Our Mission:
+          |  Working together for a safer Bahamas.
+
+        p 
+          strong Our Mandate (In Law):
+
+        ul
+          li Maintenance of Law and Order
+          li Preservation of the peace
+          li Prevention and Detection of Crime
+          li Apprehension of Offenders
+          li Enforcement of Laws
+
+        p 
+          strong Our Guiding Philosophy:
+          |  "To fulfill our mandate for policing The Commonwealth of The Bahamas, in partnership with all citizens, residents, and visitors, by serving them with Care, Respect, and Trust."
+
+        div
+
+          strong Statement of Common Purpose and Values:
+          
+          br
+
+          p The Royal Bahamas Police Force, in partnership with all citizens, residents and visitors, exists to provide quality law enforcement service, with emphasis on the maintenance of law and order, the preservation of peace, the prevention and detection of crime and the enforcement of all laws with which it is charged.
+
+          p We shall perform our duties in a manner which respects individual human rights and which reflects fairness, sensitivity and compassion. Yet, we shall act in firm pursuit of all offenders of our laws, so as to ensure a safe and just society, where neither crime nor the fear of crime adversely affects the quality of life.
+
+          p We shall accomplish these goals with a high degree of professionalism, through leadership and teams of individuals who are competent, ethical and dedicated. We shall discharge our duties with courage, integrity and loyalty and, being ever mindful of a changing environment, with a willingness to embrace justified criticism and the need for change.
+
+
+      -
+        pages = [
+          {title:'About Us', link:'/about/'},
+          {title:'Our History', link:'/about/our-history'},
+          {title:'Executive Team', link:'/about/executive-team'},
+          {title:'Stations & Divisions', link:'/about/stations-divisions'},
+
+        ]
+        
+      
+
+      include ../../partials/_sidebar
+
+      +sidebar(pages)

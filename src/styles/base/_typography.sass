@@ -1,0 +1,36 @@
+%headings
+  // color: $prime
+  // font-family: system-ui, sans-serif
+  font-weight: 700
+  line-height: 1.15
+  padding-bottom: 0.25em
+
+h1, h2, h3, h4, h5, h6
+  @extend %headings
+
+h1, .font--1
+  +fluid(font-size, 42, 47)
+
+h2, .font--2
+  +fluid(font-size, 33, 37)
+
+h3, .font--3
+  +fluid(font-size, 26, 29)
+
+h4, .font--4
+  +fluid(font-size, 20, 23)
+
+h5, .font--5
+  +fluid(font-size, 16, 18)
+
+h6, .font--6
+  +fluid(font-size, 13, 14)
+
+p
+  // padding-top: 0.5em
+  padding-bottom: 0.75em
+  
+
+small
+  font-size: 0.8em
+  line-height: inherit

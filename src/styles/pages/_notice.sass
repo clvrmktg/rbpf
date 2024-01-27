@@ -1,0 +1,48 @@
+.poster
+
+  @media (min-width: 1000px )
+    grid-template-columns: 1fr repeat(2, 1fr)
+    grid-template-areas: 'gallery details details'
+    // +gap(3em)
+
+    &__details
+      grid-area: details
+    
+    &__gallery
+      grid-area: gallery
+
+  &__thumb
+    padding-top: 100%
+    position: relative
+
+    > img
+      position: absolute
+      top: 0
+      left: 0
+
+
+.notice
+
+  &--type
+    background-color: $prime
+    color: $white
+
+.offences
+  font-weight: 400
+  
+.desc
+
+  &__heading
+    background-color: $prime
+    color: $white
+
+  // &__attributes
+  //   +gap(0.25em)
+
+
+.alert
+  border-left: em(5) solid
+
+  &--danger
+    background-color: rgba(red, 0.1)
+    border-color: red

@@ -1,0 +1,14 @@
+.info-block
+  grid-template-columns: [icon-start] 1.5em [icon-end text-start] 1fr [text-end]
+  grid-template-rows: [icon-start text-start] 1fr [icon-end text-end]
+
+.block
+
+  &__icon
+    grid-area: icon
+    
+    > svg
+      width: 1.5em
+
+  &__text
+    grid-area: text

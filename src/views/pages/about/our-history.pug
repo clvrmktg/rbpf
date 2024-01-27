@@ -1,0 +1,60 @@
+extends ../../layout/_layout
+
+block var
+  - pageTitle = 'Our History'
+  - description = 'This is a template'
+  - bulletin = 'current'
+
+  //- This works but I'm repeating myself.
+  - crumbs = {'About Us': '/about/','Our History':'last'}
+
+block content
+
+  main#main(class='[ main ]')
+  
+    include ../../partials/_hero
+
+    div(class='[ layout sidebar--right ][ x--wide grid gc--3 gr--2 py--5 ]')
+
+      article(class='[ content ]')
+
+        p The Royal Bahamas Police Force (RBPF) boasts a distinguished 180-year history, shaped by pivotal moments and adaptive measures. Founded in 1840 with 17 men, including Inspector General John Pinder, the force has evolved into a robust organization with 2,627 officers, police reserves, and civilians.
+
+        p Reflecting the English policing pattern in the early 18th Century, constables and night watchmen enforced government rules and patrolled Nassau. The formal establishment of the RBPF on March 1, 1840, marked a crucial step in addressing law enforcement needs on New Providence.
+
+        p The 19th Century presented challenges, including budget constraints and conflicts among officers. However, under Acting Inspector Edward Vernon in 1863, the Police Act of 1864 was introduced, shaping the force's structure and qualifications. Notably, Stipendiary Magistrates were empowered to recruit constables on Family Islands, significantly boosting manpower.
+
+        p In 1954, the appointment of Edward Dewitt Sears as the 1st Bahamian Commissioner signaled growth. Subsequent commissioners, including E.J.H. Colchester-Weymss, focused on modernization and police welfare. Establishments like the Security and Intelligence Branch, Police Radio Control Room, and Force Garage further enhanced the force's capabilities.
+
+        p The 1960s ushered in social changes, introducing female police officers and voluntary police reserves. In 1973, Salathiel Thompson became the 1st Bahamian Commissioner in the Independent Commonwealth era, guiding the force through Independence. Commissioners such as Gerald Augustus Bartlett and Bernard Kenneth Bonamy further facilitated the force's transition into the digital age.
+
+        p The 21st Century brought a focus on community policing and intelligence-led strategies under leaders like Paul H. Farquharson. Commissioners Reginald Ferguson, Ellison Edroy Greenslade, Anthony Ferguson, and Paul A. Rolle continued this trajectory, emphasizing technology, partnerships, and efficiency.
+
+        p Commissioner Rolle, appointed in 2020, introduced a vision for safer communities with seven priorities. Under his leadership, the force is undergoing significant restructuring for enhanced efficiency and effectiveness. Public-private partnerships and community policing initiatives are central to achieving this vision, fostering collaboration with the public for a safer Bahamas.
+
+        p In the dynamic operating environment, the RBPF prioritizes engaging public discourse, garnering support, and forming partnerships to address crime effectively. This commitment ensures a safer Bahamas, emphasizing the shared responsibility of both law enforcement and the community.
+
+      -
+        pages = [
+          {title:'About Us', link:'/about/'},
+          {title:'Our History', link:'/about/our-history'},
+          {title:'Executive Team', link:'/about/executive-team'},
+          {title:'Stations & Divisions', link:'/about/stations-divisions'},
+
+        ]
+        
+      aside(class='[ sidebar ]')
+
+        nav(class='[ sidebar__navigation ][ pt--1.5 pb--2 ]')
+          
+          h3(class='[ font--4 ][ mb--0.5 ]') Section links
+          
+          ul(class='[ sidebar__menu ][ grid gr--0.25 ]')
+            each page in pages
+              li(class='[ sidebar__menu__item ]')
+                a(href=page.link)= page.title
+
+        div(class='[ pt--2 ]')
+          h4(class='[ font--5 ]') Share this page
+          
+          ul(class='[ social ]')

@@ -1,0 +1,74 @@
+extends ../../layout/_layout
+
+block var
+  - pageTitle = 'Report A Crime'
+  - description = 'This is a template'
+  - bulletin = 'current'
+
+  - crumbs = {'Make A Report':'make-a-report', 'Report A Crime':'last'}
+
+block content
+
+  main#main(class='[ main ]')
+
+    include ../../partials/_hero
+
+    div(class='[ layout sidebar--right ][ x--wide grid gc--3 gr--2 py--5 ]')
+
+      div(class='[ content ]')
+
+        aside(class='[ grid gr--1 pb--2 mb--1 ]')
+
+          noscript
+            div(class='[ info-block ][ grid gc--0.75 ]')
+              span(class='[ block__icon ]')
+                include ../../graphics/info.svg
+
+              div(class='[ block__text ]')
+                
+                h2(class='[ font--4 ]') JavaScript is not enabled
+                p Without JavaScript enabled forms will not work.
+
+          div(class='[ info-block ][ grid gc--0.75 ]')
+          
+            span(class='[ block__icon ]')
+              include ../../graphics/warning.svg
+
+            div(class='[ block__text ]')
+
+              h3(class='[ font--4 ]') Is it an emergency?
+
+              p Does it feel like the situation could get heated or violent very soon? Is someone in immediate danger? Do you need support right away? If so, please call 999 now. 
+
+              p If you have a hearing or speech impairment, use our 
+                a(href="") emergency WhatsApp service
+                | .
+
+        div(class='[ panel ]')
+
+          div(class='[ mb--2 ]')
+          
+            p If you’ve witnessed or been the victim of crime please report it to us.
+
+            p Reports are dealt with by our control room in exactly the same way whether you report it online or by telephone.
+
+            p Before you give us the details of the crime, we will ask you a few questions to make sure you go to the relevant online form.
+
+          hr(class='[ block ]')
+
+          form(action="")
+            +input('Is a crime happening right now, is the suspect still at the scene, or is anyone seriously injured or in immediate danger?', 'happening', 'text') 
+
+      -
+        pages = [
+          {title:'About Us', link:'/about/'},
+          {title:'Our History', link:'/about/our-history'},
+          {title:'Executive Team', link:'/about/executive-team'},
+          {title:'Stations & Divisions', link:'/about/stations-divisions'},
+
+        ]
+        
+
+      include ../../partials/_sidebar
+      
+      +sidebar(pages)

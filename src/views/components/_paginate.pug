@@ -1,0 +1,10 @@
+ul(class='[ paginate ] [ x--wide flex--center pt--2 pb--5 ]')
+  li#prev(class='[ paginate__item paginate__prev ]')
+    a(href='#').flex
+      //- ❮
+      include ../graphics/_arrow-prev
+  li#current(class='[ paginate__item paginate__current ]') 1 of 4
+  li#next(class='[ paginate__item paginate__next ]')
+    a(href='#')
+      //- ❯
+      include ../graphics/_arrow-next

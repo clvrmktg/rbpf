@@ -1,0 +1,19 @@
+.issue
+  background-color: $background--001
+
+  &__bar
+    grid-template-columns: max-content 1fr max-content
+
+.page-use
+
+  grid-template-columns: [text-start] max-content [text-end yes-start] max-content [ yes-end no-start] max-content [no-end]
+  grid-template-rows: [text-start yes-start no-start] max-content [text-end yes-end no-end]
+
+  > p
+    grid-area: text
+
+  .yes
+    grid-area: yes
+
+  .no
+    grid-area: no

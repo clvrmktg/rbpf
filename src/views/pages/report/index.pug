@@ -1,0 +1,71 @@
+extends ../../layout/_layout
+
+block var
+  - pageTitle = 'Report'
+  - description = 'This is a template'
+  - bulletin = 'current'
+
+  - crumbs = {'Report':'last'}
+
+block content
+
+  main#main(class='[ main ]')
+
+    include ../../partials/_hero
+
+    div(class='[ layout sidebar--right ][ x--wide grid gc--3 gr--2 py--5 ]')
+
+      div(class='[ content ]')
+
+        aside(class='[ grid gr--1 pb--2 mb--1 ]')
+
+          noscript
+            div(class='[ info-block ][ grid gc--0.75 ]')
+              span(class='[ block__icon ]')
+                include ../../graphics/info.svg
+
+              div(class='[ block__text ]')
+                
+                h2(class='[ font--4 ]') JavaScript is not enabled
+                p Without JavaScript enabled forms will not work.
+
+          div(class='[ info-block ][ grid gc--0.75 ]')
+          
+            span(class='[ block__icon ]')
+              include ../../graphics/warning.svg
+
+            div(class='[ block__text ]')
+
+              h3(class='[ font--4 ]') Is it an emergency?
+
+              p Does it feel like the situation could get heated or violent very soon? Is someone in immediate danger? Do you need support right away? If so, please call 999 now. 
+
+              p If you have a hearing or speech impairment, use our 
+                a(href="") emergency WhatsApp service
+                | .
+
+        div(class='[ panel ]')
+
+          ul(class='[ reports ]')
+
+            li(class='[ report__item ][ pl--1 py--1 ]')
+              h2(class='[ report__link][ font--4 ]')
+                a(href="/report/report-a-crime") Report a Crime 
+
+            li(class='[ report__item ][ pl--1 py--1 ]')
+              h2(class='[ report__link ][ font--4 ]')
+                a(href="#") Report Domestic Violence  
+
+      -
+        pages = [
+          {title:'About Us', link:'/about/'},
+          {title:'Our History', link:'/about/our-history'},
+          {title:'Executive Team', link:'/about/executive-team'},
+          {title:'Stations & Divisions', link:'/about/stations-divisions'},
+
+        ]
+        
+
+      include ../../partials/_sidebar
+      
+      +sidebar(pages)

@@ -1,0 +1,39 @@
+include ../components/_breadcrumbs
+
+if homepage
+  
+  header(class='[ hero hero--home ]')
+
+    h1(class='[ hidden ]') Royal Bahamas Police Force
+  
+    div(class='[ wrapper ] [ x--wide py--5 ]')
+
+      div(class='hero__text')
+
+        h2(class='[ font--1 ]') Creating Safer Communities
+
+        p(class='[ ch--54 ]') The Royal Bahamas Police Force is dedicated to ensuring the safety and well-being of Bahamians, residents and visitors across the entire Bahamas through vigilant protection, law enforcement, and community engagement.
+
+        div(class='[ ch--35 grid x2--md g--1 mb--1 ]')
+
+          a(class='[ btn btn--solid--lg solid--wht ]' href='/report/') Make a Report
+
+          a(class='[ btn btn--ghost--lg ghost--wht ]' href='#') File a Complaint
+
+        
+        small(class='[ block ]')
+          | Have you witnessed exemplary service or positive actions? 
+          strong 
+            a(href='#') Commend an officer.
+          
+else
+  
+  header(class='[ hero ]')
+
+    div(class='[ wrapper ] [ x--wide py--5 ]')
+
+      div(class='[ hero__text ]')
+
+        h1= pageTitle
+
+        +breadcrumbs(crumbs)

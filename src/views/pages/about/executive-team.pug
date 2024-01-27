@@ -1,0 +1,50 @@
+extends ../../layout/_layout
+
+block var
+  - pageTitle = 'Executive Team'
+  - description = 'This is a template'
+  - bulletin = 'current'
+
+  //- This works but I'm repeating myself.
+  - crumbs = {'About Us':'/about/', 'Stations & Divisions':'last'}
+
+block content
+
+  main#main(class='[ main ]')
+  
+    include ../../partials/_hero
+
+    div(class='[ layout sidebar--right ][ x--wide grid gc--3 gr--2 py--5 ]')
+
+      article(class='[ content ]')
+        
+        h2 Meet Our Leadership Team
+
+        p At the helm of the Royal Bahamas Police Force is a distinguished Senior Executive Leadership Team, led by Commissioner of Police Clayton Fernander. Assisting him in steering the course are a Deputy Commissioner, a Senior Assistant Commissioner, and twelve Assistant Commissioners.
+
+        p This dynamic team is entrusted with the crucial responsibility of setting strategic objectives, formulating policing plans, and overseeing the development and mobilization of our police force. Get to know the leaders shaping the future of law enforcement in The Bahamas.
+              
+      -
+        pages = [
+          {title:'About Us', link:'/about/'},
+          {title:'Our History', link:'/about/our-history'},
+          {title:'Executive Team', link:'/about/executive-team'},
+          {title:'Stations & Divisions', link:'/about/stations-divisions'},
+
+        ]
+        
+      aside(class='[ sidebar ]')
+
+        nav(class='[ sidebar__navigation ][ pt--1.5 pb--2 ]')
+          
+          h3(class='[ font--4 ][ mb--0.5 ]') Section links
+          
+          ul(class='[ sidebar__menu ][ grid gr--0.25 ]')
+            each page in pages
+              li(class='[ sidebar__menu__item ]')
+                a(href=page.link)= page.title
+
+        div(class='[ pt--2 ]')
+          h4(class='[ font--5 ]') Share this page
+          
+          ul(class='[ social ]')

@@ -1,0 +1,110 @@
+footer(class='[ issue ][ py--2 ]' x-data="{ open: false }")
+
+  div(class='[ wrapper ][ x--wide ]')
+
+    div(class='[ issue__bar ][ flex--wrap flex--between--middle ]')
+
+      div(class='[ page-use ][ grid gc--0.5 ]')
+
+        p(class='[ flex--middle font--700 pb--0 ]') Is this page useful?
+
+        button(class='[ btn btn--ghost--sm ghost--blk yes ]' value='1') Yes
+        button(class='[ btn btn--ghost--sm ghost--blk no ]' value='0') No
+
+      div(class='[ report-button ]')
+
+        button(class='[ btn btn--ghost--sm ghost--blk ]' x-on:click="open = ! open") Report a problem with this page
+
+    div(class='[ issue__report ][ pt--2 ]' x-show="open")
+
+      hr
+
+      form(class='[ issue__form ][ x--narrow pt--2 ]')
+
+        div(class='[ mb--1 ]')
+
+          h2(class='[ font--3 mb--0.25 ]') Help us improve this website
+
+          p This is for website feedback only.
+
+          p Do not use this to report a crime.
+
+          p If you need to tell us about an incident or crime,
+            a(href="") do that here
+            | .
+
+          p Do not include any personal information — like your National Insurance or credit card number — in your message.
+
+        +textarea('What were you trying to do?', 'action')
+        +textarea('What went wrong?', 'problem')
+
+        div(class='[ flex--end  gc--1 ]')
+          button(class='[ btn btn--ghost--sm ghost--blk ]' x-on:click="open = false") Cancel
+          button(class='[ btn btn--solid--lg solid--blk ]' type='submit') Submit
+
+footer(class='[ footer ]')
+
+  div(class='[ wrapper ] [ x--wide pt--3 pb--2 ]')
+
+    div(class='[ details ] [ ch--35 ]')
+
+      a(class='[ footer__logo ][ flex--middle pb--1 ]' href='/', aria-label=siteName)
+        include ../graphics/_logo
+      
+      p The Western Division of the Royal Bahamas Police Force protects and serves the western communities of New Providence.
+
+      ul.footer__social.social.flex--middle
+
+        li.social__item
+          a.social__link.flex--middle(href='#', aria-label='Follow me on Facebook' rel='noopener', target='_blank')
+            +fb-sq('footer__facebook', follow)
+        
+        li.social__item
+          a.social__link.flex--middle(href='#', aria-label='Follow me on Twitter' rel='noopener', target='_blank')
+            +tw('footer__twitter', follow)
+
+    div(class='[ col--2 ]')
+
+      nav(class='[ navbar__menu ]')
+        ul(class='[ menu ]')
+          each item, i in menu
+            li(class=`menu__item ${menu ? item.current : false}`)
+              a(class='[ menu__link ]' href= item.link)= item.page
+    
+    //- div(class='[ signup ]')
+    //-   p Want to stay up-to-date? Sign up for our Newsletter.
+    //-   form(class='[ form form--signup ]')
+
+    //-     div(class='[ form__field ]')
+    //-       label(class='form__label')
+    //-       input(class='form__input' type='email' placeholder='your@email.com' required=true )
+
+    //-     div(class='[ form__submit ] [ flex--end ]')
+    //-       input#submit(class='[ btn btn--solid--sm solid--wht ]' type='submit' value='Sign Up')
+
+  address(class='[ station ] [ x--wide pb--1 ]')
+    span Western Police Station
+    span(class='[ breaks ]') ,  
+    span John F. Kennedy Drive
+    span(class='[ breaks ]') ,   
+    span P.O. Box N-458
+    span(class='[ breaks ]') , 
+    span Nassau, NP 
+  
+    span 
+      | Non-Emergency: 
+      +tel('242', '377', '8391')
+    span
+      | Emergency: 
+      +emr('911')
+      |  or
+      +emr('919')
+  
+  b(class='[ line line--wht ] [ x--wide ]')
+
+  div(class='[ copyright ] [ x--wide flex--between--middle pt--1 pb--2 ]')
+
+    small= `© 2020 Royal Bahamas Police Force. All rights reserved.`
+
+    small
+      a(href='/privacy-policy') Privacy Policy

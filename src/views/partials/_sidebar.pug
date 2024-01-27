@@ -1,0 +1,23 @@
+mixin sidebar(pages)
+
+  aside(class='[ sidebar ]')
+
+    nav(class='[ sidebar__navigation ][ pt--1.5 pb--2 ]')
+      
+      h3(class='[ font--4 ][ mb--0.5 ]') Section links
+      
+      ul(class='[ sidebar__menu ][ grid gr--0.25 ]')
+        each page in pages
+          li(class='[ sidebar__menu__item ]')
+            a(href=page.link)= page.title
+
+    div(class='[ pt--2 ]')
+
+      h4(class='[ font--5 ][ mb--0.5 ]') Share this page
+      
+      ul(class='[ social ][ flex gc--0.5 ]')
+        +fb('')
+        +tw('')
+        +in('')
+        +wa-sh('')
+        +env('')

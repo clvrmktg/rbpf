@@ -1,0 +1,9 @@
+section(class='[ alert alert--danger ] [ p--1 ]')
+  h4 Warning
+  
+  p 
+    | Take no action to apprehend 
+    = `${person ? 'this person ' : 'these people '}`
+    | yourself. Report any information to the nearest RBPF division or the police in your area or contact Crime Stoppers at 
+    +tel('242', '502', '9991').
+  

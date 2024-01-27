@@ -1,0 +1,71 @@
+extends ../layout/_layout
+
+block var
+  - pageTitle = 'Contact Us'
+  - description = 'This is a template'
+  - contact = 'current'
+  - crumbs = {'Contact Us':'last'}
+  
+block content
+
+  main#main(class='[ main ]')
+
+    include ../partials/_hero
+
+    div(class='[ x--wide grid py--5 ]')
+
+      div(class='[ grid gr--1 ]')
+
+        p Looking to contact the Royal Bahamas Police Force?
+
+        p If you'd like to contact the polices station nearest you? Click here to locate your nearest police station.
+
+        ul 
+          li Public Affairs and Communications
+          li East Street North
+          
+        p 
+          +tel('242', '325', '0740')
+
+      include ../components/_contact-form
+
+    ul 
+      li
+
+        h2(class='[ font--4 ]') Police Headquarters
+        
+        address(class='[ mb--1 ]') 
+
+          ul(class='[ no-list ]')
+            li East Street North
+            li Nassau, NP
+        //- 242-328-5047/322-4774/5
+        
+        ul(class='[ grid gr--0.5 ]')
+
+          h3(class='[ font--5 ]') Telephone:
+          
+          li
+            +tel('242', '328', '5047')
+          li
+            +tel('242', '322', '4774')
+          li
+            +tel('242', '322', '4775')
+
+        br
+        
+        a(href="#") Get Directions 
+
+      li
+
+        h2(class='[ font--4 ]') Police Headquarters (Northern Bahamas)
+        address
+          ul
+            li Gerald Bartlet Building
+            li East Mall Drive
+            li Freeport, GB
+
+        a(href="#") Get Directions 
+        
+      
+      

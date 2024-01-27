@@ -1,0 +1,50 @@
+
+- 
+  menu = [
+    {page:'Services', link:'#', current: missing},
+    {page:'Crime Prevention', link:'#', current: crime},
+    {page:'About Us', link:'/about/', current: about},
+    {page:'Contact', link:'/contact-us', current: contact}
+    ]
+
+input#click(type='checkbox', aria-checked='false', tabindex='0', aria-labelledby='menu-prompt')
+
+header(class='[ navbar ][ py--0.5 ]')
+
+  div(class='[ callbar ][ mb--0.75 ]')
+
+    div(class='[ wrapper ][ x--wide flex--end pb--0.25 ]')
+      
+      a(href='/report/' class='[ mr--1 ]') Online Reporting
+
+      address(class='[ mr--1 ]')
+        | Non-Emergency: 
+        +tel('242', '377', '8391')
+
+      address(class='[ mr--1 ]')
+        | Emergency: 
+        +emr(911)
+        |  or 
+        +emr(919)
+
+      address
+        | COVID: 
+        +emr(311)
+    
+    b(class='[ line line--wht ][ x--wide ]')
+      
+  div(class='[ navbar__wrapper ][ x--wide--p flex--wrap flex--between--middle ]')
+
+    a(class='[ navbar__logo ][ flex--middle ]' href='/' aria-label=siteName)
+      include ../graphics/_logo
+      include ../graphics/_logo-short
+
+    label#navicon(class='[ navicon ][ flex--middle ]' for='click')
+      strong#menu-prompt Open the menu
+      span(class='[ bar ]')
+
+    nav(class='[ navbar__menu ]')
+      ul(class='[ menu ]')
+        each item, i in menu
+          li(class=(item.current ? `menu__item ${item.current}` : 'menu__item'))
+            a(class='[ menu__link ]' href= item.link)= item.page

@@ -1,0 +1,44 @@
+body
+  grid-template-rows: [navbar-start] max-content [navbar-end main-start] 1fr [main-end footer-start] max-content [footer-end]
+
+.navbar
+  grid-area: navbar
+
+.main
+  grid-area: main
+
+.footer
+  grid-area: footer
+
+.sidebar--left
+  grid-template-columns: [sidebar-start] 1fr [sidebar-end content-start] 3fr [content-end]
+  grid-template-rows: [sidebar-start content-start] 1fr [sidebar-end content-end]
+
+.sidebar--right
+  grid-template-columns: [content-start] 3fr [content-end sidebar-start] 1fr [sidebar-end]
+  grid-template-rows: [sidebar-start content-start] 1fr [sidebar-end content-end]
+
+.sidebar
+  grid-area: sidebar
+
+.content
+  grid-area: content
+
+.sidebar
+
+  &__navigation
+    border-top: 2px solid $prime
+    border-bottom: 1px solid grey
+    
+    // position: relative
+
+    // &::before
+    //   content: ''
+    //   width: 100%
+    //   height: em(10)
+    //   background-color: $prime
+    //   border-top-right-radius: em(5)
+    //   border-top-left-radius: em(5)
+    //   position: absolute
+    //   top: 0
+    //   left: 0

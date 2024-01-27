@@ -1,0 +1,71 @@
+=ratio($width, $height)
+  .ratio--#{$width}\:#{$height}
+    aspect-ratio: #{$width} / #{$height}
+    object-fit: cover
+
+    > img, > noscript > img
+      height: 100%
+
+    @supports not (aspect-ratio: auto)
+      padding-top: percentage($width / $height)
+      position: relative
+
+      > img
+        position: absolute
+        top: 0
+        left: 0
+
+
++ratio(1,1)
+
++ratio(16,9)
+
++ratio(4,5)
+
++ratio(5,3)
+
++ratio(18,23)
+
+.upload
+  height: em(200)
+  border-style: dashed
+  border-radius: em(5)
+
+
+  &__selector
+    height: inherit
+    grid-template-columns: 1fr [prompt-start] max-content [prompt-end] 1fr
+    grid-template-rows: 1fr [prompt-start] max-content [prompt-end] 1fr
+
+    position: relative
+
+  &__input
+    width: 100%
+    height: inherit
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    opacity: 0
+    cursor: pointer
+
+  &__prompt
+    grid-area: prompt
+
+  &__editor
+    background-color: var(--white)
+    border-radius: em(5)
+    position: absolute
+    top: 50%
+    left: 0
+    z-index: 2
+
+  &__result
+    grid-template-columns: em(200) 1fr
+    height: inherit
+ 
+.result__img
+
+.icon.icon--cloud_upload
+  width: 4em
+  height: 4em
