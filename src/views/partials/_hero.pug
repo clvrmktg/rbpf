@@ -6,26 +6,39 @@ if homepage
 
     h1(class='[ hidden ]') Royal Bahamas Police Force
   
-    div(class='[ wrapper ] [ x--wide py--5 ]')
+    div(class='[ wrapper ]')
 
-      div(class='hero__text')
+      div(class='[ hero__content ][ x--wide flex--bottom py--5 mb--2 ]')
 
-        h2(class='[ font--1 ]') Creating Safer Communities
+        div(class='[ hero__banner ]')
 
-        p(class='[ ch--54 ]') The Royal Bahamas Police Force is dedicated to ensuring the safety and well-being of Bahamians, residents and visitors across the entire Bahamas through vigilant protection, law enforcement, and community engagement.
+          h2(class='[ font--1 ]') Creating Safer Communities
 
-        div(class='[ ch--35 grid x2--md g--1 mb--1 ]')
+          p(class='[ ch--54 ]') The Royal Bahamas Police Force is dedicated to ensuring the safety and well-being of Bahamians, residents and visitors across the entire Bahamas through vigilant protection, law enforcement, and community engagement.
 
-          a(class='[ btn btn--solid--lg solid--wht ]' href='/report/') Make a Report
+          div(class='[ ch--35 grid x2--md g--1 mb--1 ]')
 
-          a(class='[ btn btn--ghost--lg ghost--wht ]' href='#') File a Complaint
+            a(class='[ btn btn--solid--lg solid--wht ]' href='/report/') Make a Report
+
+            a(class='[ btn btn--ghost--lg ghost--wht ]' href='#') File a Complaint
 
         
-        small(class='[ block ]')
-          | Have you witnessed exemplary service or positive actions? 
-          strong 
-            a(href='#') Commend an officer.
-          
+          small(class='[ block ]')
+            | Have you witnessed exemplary service or positive actions? 
+            strong 
+              a(href='#') Commend an officer.
+
+
+    -
+      images = [
+        {path:'commissioner-fernander-majority-rule', alt:'Commissioner Clayton Fernander at Majority Rule church service', position: 'top-right'},
+        {path:'rbpf-funeral-service', alt:'ACP saluting fallen officer before committal', position: 'top'},
+        {path:'commissioner-fernander-governor-general-cynthia-pratt', alt:'Commissioner Fernander greeting Her Excellency, Governor General of The Bahamas, Cynthia Pratt', position: 'top-right'},
+        
+      ]
+
+    include ../components/_slider
+
 else
   
   header(class='[ hero ]')

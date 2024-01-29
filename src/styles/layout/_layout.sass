@@ -1,5 +1,5 @@
 body.grid
-  grid-template-columns: [navbar-start main-start issue-start footer-start] 1fr [navbar-end main-end issue-end footer-end]
+  grid-template-columns: [navbar-start main-start issue-start footer-start] minmax(#{em(280), 1fr}) [navbar-end main-end issue-end footer-end]
   grid-template-rows: [navbar-start] max-content [navbar-end main-start] 1fr [main-end issue-start] max-content [ issue-end footer-start] max-content [footer-end]
 
 .navbar

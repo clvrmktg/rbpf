@@ -30,7 +30,7 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
     
   
     //- CSS Loading
-    - let hash = new Date().getTime()
+    - hash = new Date().getTime()
 
     //- https://www.filamentgroup.com/lab/critical-cdn.html
     //- CSS — START
@@ -39,8 +39,8 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
       link(type='text/css' rel='stylesheet' href='styles/style-version.min.css')
 
     else
-      link(rel='preload' href='/styles/style.css' as='style')
-      link(type='text/css' rel='stylesheet' href='/styles/style.css', )
+      link(rel='preload' href= `/styles/style.css?${hash}` as='style')
+      link(type='text/css' rel='stylesheet' href=`/styles/style.css?${hash}`)
     //- CSS — END
     
     // Site Scripts — START

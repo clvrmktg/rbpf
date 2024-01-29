@@ -1,68 +1,69 @@
-.news
-  grid-template-columns: [feature-start four-start] 1fr [four-end five-start]  1fr [ five-end feature-end six-start two-start three-start] 1fr [ six-end two-end three-end ] 
-  grid-template-rows:  [feature-start two-start] 1fr max-content max-content [two-end three-start] 1fr max-content max-content [three-end feature-end four-start five-start six-start ] 1fr max-content max-content [ five-end six-end four-end]
++device(desktop-up)
+  .news
+    grid-template-columns: [feature-start four-start] 1fr [four-end five-start]  1fr [ five-end feature-end six-start two-start three-start] 1fr [ six-end two-end three-end ] 
+    grid-template-rows:  [feature-start two-start] 1fr max-content max-content [two-end three-start] 1fr max-content max-content [three-end feature-end four-start five-start six-start ] 1fr max-content max-content [ five-end six-end four-end]
 
-   
-.story--2
-  grid-area: two
+    
+  .story--2
+    grid-area: two
 
-.story--3
-  grid-area: three
+  .story--3
+    grid-area: three
 
-.story--4
-  grid-area: four
+  .story--4
+    grid-area: four
 
-.story--5
-  grid-area: five
+  .story--5
+    grid-area: five
 
-.story--6
-  grid-area: six
+  .story--6
+    grid-area: six
 
-.story
-  outline: $bg
+  .story
+    outline: $bg
 
-  @supports (grid-template-rows: subgrid)
-    grid-row: span 3
-
-    > .story__link
+    @supports (grid-template-rows: subgrid)
       grid-row: span 3
 
-      > h3
-        grid-row: span 1
+      > .story__link
+        grid-row: span 3
 
-      > time
+        > h3
+          grid-row: span 1
+
+        > time
+          grid-row: span 1
+
+      &__thumb
         grid-row: span 1
 
     &__thumb
-      grid-row: span 1
 
-  &__thumb
-
-    > img
-      height: 100%
-   
-.story--1
-  grid-area: feature
-
-  @supports (grid-template-rows: subgrid)
-    grid-row: span 6
-
-  > .story__link
-
-    @supports not (grid-template-rows: subgrid)
-      grid-template-rows: 1fr max-content max-content
+      > img
+        height: 100%
+    
+  .story--1
+    grid-area: feature
 
     @supports (grid-template-rows: subgrid)
       grid-row: span 6
 
-      > h3
-        grid-row: span 1
+    > .story__link
 
-      > time
-        grid-row: span 1
+      @supports not (grid-template-rows: subgrid)
+        grid-template-rows: 1fr max-content max-content
 
-      > figure
-        grid-row: span 4
+      @supports (grid-template-rows: subgrid)
+        grid-row: span 6
+
+        > h3
+          grid-row: span 1
+
+        > time
+          grid-row: span 1
+
+        > figure
+          grid-row: span 4
 
 
 .subgrid
