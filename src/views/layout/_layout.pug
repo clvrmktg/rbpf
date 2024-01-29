@@ -39,14 +39,14 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
       link(type='text/css' rel='stylesheet' href='styles/style-version.min.css')
 
     else
-      link(rel='preload' href='styles/style.css' as='style')
-      link(rel='stylesheet', href='/styles/style.css', )
+      link(rel='preload' href='/styles/style.css' as='style')
+      link(type='text/css' rel='stylesheet' href='/styles/style.css', )
     //- CSS — END
     
     // Site Scripts — START
     script(src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer) 
+    script(defer src='https://royalbpf.twic.pics/?v1')
     +script('app', true, true, false)
-    script(async defer src='https://royalbpf.twic.pics/?v1')
     // Site Scripts — END
 
     // No Script Styles – START

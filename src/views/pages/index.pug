@@ -11,6 +11,16 @@ block content
 
     include ../partials/_hero
     
+    -
+      images = [
+        {path:'commissioner-fernander-majority-rule', alt:'Commissioner Clayton Fernander at Majority Rule church service'},
+        {path:'rbpf-funeral-service', alt:'ACP saluting fallen officer before committal'},
+        {path:'commissioner-fernander-governor-general-cynthia-pratt', alt:'Commissioner Fernander greeting Her Excellency, Governor General of The Bahamas, Cynthia Pratt'},
+        
+      ]
+
+    include ../components/_slider
+
     div(class='[ x--wide grid gr--5 py--5 ]')
 
       - i = 0
@@ -65,7 +75,7 @@ block content
           - 
             news = [
               {title:'A Heartfelt Visit: Lavaria Storr Meets Commissioner Fernander', date: 'January 24, 2024', img:'commissioner-clayton-fernander-lavaria-storr-courtesy-visit'},
-              {title:'Collaborative Session: Urban Renewal Centers Reintegration Meeting', date: 'January 18, 2024', img:'urban-renewal-integration-meeting'},
+              {title:'Collaborative Session: Urban Renewal Centers Reintegration Meeting', date: 'January 18, 2024', img:'urban-renewal-reintegration-meeting'},
               {title:'10th Annual Majority Rule Day Commemorative Church Service', date: 'January 11, 2024', img:'governor-general-commissioner-police'},
               {title:'Promotion Milestone: 10 Senior Officers Elevated to Assistant Commissioner of Police', date: 'December 13, 2023', img:'acp-promotion-milestone'},
               {title:'59 Years of Women\'s Contribution: Celebrating Women in Policing', date: 'November 24, 2023', img:'59-years-women-policing'},
@@ -76,28 +86,14 @@ block content
           each story, index in news
 
             
-            if index + 1 != 1
 
-              li(class=`[ story story--${index + 1} ][ grid subgrid mb--2 ]`)
+            li(class=`[ story story--${index + 1} ][ grid subgrid mb--2 ]`)
 
-                  a(class='[ story__link ][ grid subgrid ]' href='/news-updates/news/post')
+                a(class='[ story__link ][ grid subgrid ]' href='/news-updates/news/post')
 
-                    h3(class='[ font--4 font--400 o--2 ]')= story.title
-                    
-                    time(class='[ o--3 ]' datetime=story.date)= story.date
-                    
-                    figure(class='[ story__thumb ][ mb--1 o--1 ]')
-                      +img(story.img, story.title)(class='[ ratio--1:1 ]')
-
-            else
-
-              li(class=`[ story story--${index + 1} ][ grid subgrid mb--2 ]`)
-
-                  a(class='[ story__link ][ grid subgrid ]' href='/news-updates/news/post')
-
-                    h3(class='[ font--4 font--400 o--2 ]')= story.title
-                    
-                    time(class='[ o--3 ]' datetime=story.date)= story.date
-                   
-                    figure(class='[ story__thumb ][ mb--1 o--1 ]')
-                      +img(story.img, story.title)(class='[ ratio--1:1 ]')
+                  h3(class='[ font--4 font--400 o--2 ]')= story.title
+                  
+                  time(class='[ o--3 ]' datetime=story.date)= story.date
+                  
+                  figure(class='[ story__thumb ][ mb--1 o--1 ]')
+                    +img(story.img, story.title)(class='[ ratio--1:1 ]')
