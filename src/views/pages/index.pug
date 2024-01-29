@@ -24,7 +24,7 @@ block content
 
           ]
 
-        ul(class='[ list list--services ][ grid x2--md x3--lg ]')
+        ul(class='[ list list--services ][ grid x2--md x3--lg g--1 ]')
 
           each item, service in services
 
@@ -49,7 +49,7 @@ block content
           
           p Our officers, driven by a genuine concern for the people they serve, work tirelessly to prevent crime, maintain order, and uphold the values of care, respect, and trust.
 
-          a(class='[ btn btn--solid--lg solid--prime ]' href='/about/') Learn More 
+          a(class='[ btn btn--solid--lg solid--prime ]' href='/about-us/') Learn More 
             span(class='[ hidden ]') About Us
 
 
@@ -60,20 +60,44 @@ block content
 
         h2 RBPF News &amp; Updates
 
-        div(class='[ reel ]')
 
-        ul(class='[ grid gr--1 ]')
+        ul(class='[ news ][ grid gc--1 ]')
           - 
-            bulletin = [
-              {title:'Safe Driver Awards in Lyford Cay ', desc:'The Western and Traffic Divisions in partnership with the Lyford Cay Security Team conducted a joint Road Safety initiative in Lyford Cay.'}
+            news = [
+              {title:'A Heartfelt Visit: Lavaria Storr Meets Commissioner Fernander', date: 'January 24, 2024', img:''},
+              {title:'Collaborative Session: Urban Renewal Centers Reintegration Meeting', date: 'January 18, 2024', img:''},
+              {title:'10th Annual Majority Rule Day Commemorative Church Service', date: 'January 11, 2024', img:''},
+              {title:'Promotion Milestone: 10 Senior Officers Elevated to Assistant Commissioner of Police', date: 'December 13, 2023', img:''},
+              {title:'59 Years of Women\'s Contribution: Celebrating Women in Policing', date: 'November 24, 2023', img:''},
+              {title:'Enhancing Safety: RBPF FUSUS Technology Protecting The Bahamas', date: 'November 24, 2023', img:''},
+
             ]
           
-          - l = 0;
-          while l++ < 5
-            li(class='[ reel--post ]')
+          each story, index in news
 
-                h3(class='[ font--5 font--400 ]')
-                  a(href='/bulletin/post') Safe Driver Awards in Lyford Cay
-                
-                <time datetime="2024-01-02">January 2, 2024</time>
+            
+            if index + 1 != 1
 
+              li(class=`[ story story--${index + 1} ][ grid subgrid mb--2 ]`)
+
+                  a(class='[ story__link ][ grid subgrid ]' href='/news-updates/news/post')
+
+                    h3(class='[ font--4 font--400 o--2 ]')= story.title
+                    
+                    time(class='[ o--3 ]' datetime=story.date)= story.date
+                    
+                    figure(class='[ story__thumb ][ mb--1 o--1 ]')
+                      +img(story.img, story.title)(class='[ ratio--1:1 ]')
+
+            else
+
+              li(class=`[ story story--${index + 1} ][ grid subgrid mb--2 ]`)
+
+                  a(class='[ story__link ][ grid subgrid ]' href='/news-updates/news/post')
+
+                    h3(class='[ font--4 font--400 o--2 ]')= story.title
+                    
+                    time(class='[ o--3 ]' datetime=story.date)= story.date
+                   
+                    figure(class='[ story__thumb ][ mb--1 o--1 ]')
+                      +img(story.img, story.title)(class='[ ratio--1:1 ]')

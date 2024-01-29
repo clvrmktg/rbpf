@@ -143,10 +143,7 @@ $breakpoints-map: (sm: (query: "all and (min-width: 500px)", generate-grids: tru
   @supports (display: grid)
     display: grid
     grid-template-columns: 1fr
-    grid-gap: $grid-gap
 
-    .col
-      margin-bottom: 0
   
 @each $breakpoint, $values in $breakpoints-map
   $name: $breakpoint

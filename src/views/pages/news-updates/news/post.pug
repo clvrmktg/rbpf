@@ -1,0 +1,42 @@
+extends ../../../layout/_layout
+
+block var
+  - pageTitle = 'A Heartfelt Visit: Lavaria Storr Meets Commissioner Fernander'
+  - description = 'In a heartwarming display of gratitude and community engagement, Commissioner Clayton Fernander of The Royal Bahamas Police Force recently received a special visit from 11-year-old Lavaria Storr, a remarkable young author and Head Girl of Lowe Sound Primary School in Andros.'
+  
+block content
+
+  main#main(class='[ main ]')
+
+    include ../../../partials/_hero
+
+    div(class='[ layout sidebar--right ][ x--wide grid gc--3 gr--2 py--5 ]')
+
+      article(class='[ content ]')
+
+        //- h1= pageTitle
+
+        p In a heartwarming display of gratitude and community engagement, Commissioner Clayton Fernander of The Royal Bahamas Police Force recently received a special visit from 11-year-old Lavaria Storr, a remarkable young author and Head Girl of Lowe Sound Primary School in Andros. Lavaria, accompanied by her mother, Mrs. Aleshia Storr, presented Commissioner Fernander with her book, "A Quilt Called Life," a poignant reflection on her experiences and emotions.
+
+        p Lavaria's book, written at the tender age of 11, offers readers a glimpse into the myriad of emotions she has encountered through significant events in her life. It even includes journaling space for young readers to reflect on their own emotions.
+
+        p Despite settling into life in Andros, Lavaria noticed a missing element: a library. Undeterred, she took the initiative to launch "reading in the park," a program aimed at introducing more children to the joys of reading.
+
+        p Lavaria's efforts have not gone unnoticed. She has presented her book to notable figures such as Education Minister Glenys Hanna-Martin and Commissioner Clayton Fernander, who graciously accepted her gift.
+
+        p For those interested in obtaining a copy of "A Quilt Called Life", it is available on Amazon, with plans to partner with Bahamian bookstores in the near future.
+
+        p This visit from Lavaria Storr exemplifies the spirit of gratitude and community engagement within the Bahamas. Her initiative to promote literacy and share her own experiences through writing serves as an inspiration to both her peers and adults alike.
+
+      -
+        pages = [
+          {title:'News & Updates', link:'/news-updates/'},
+          {title:'Press Releases', link:'#'},
+          {title:'Missing Persons', link:'/about/our-history'},
+          {title:'Wanted Persons', link:'/about/executive-team'},
+
+        ]
+        
+      include ../../../partials/_sidebar
+
+      +sidebar(pages)

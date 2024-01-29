@@ -1,14 +1,18 @@
-body
-  grid-template-rows: [navbar-start] max-content [navbar-end main-start] 1fr [main-end footer-start] max-content [footer-end]
+body.grid
+  grid-template-columns: [body-start] 1fr [body-end]
+  grid-template-rows: [navbar-start] max-content [navbar-end main-start] 1fr [main-end issue-start] max-content [ issue-end footer-start] max-content [footer-end]
 
 .navbar
-  grid-area: navbar
+  grid-area: body navbar
 
 .main
-  grid-area: main
+  grid-area: body main
+
+.issue
+  grid-area: body issue
 
 .footer
-  grid-area: footer
+  grid-area: body footer
 
 .sidebar--left
   grid-template-columns: [sidebar-start] 1fr [sidebar-end content-start] 3fr [content-end]

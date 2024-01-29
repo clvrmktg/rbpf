@@ -8,39 +8,40 @@ footer(class='[ issue ][ py--2 ]' x-data="{ open: false }")
 
         p(class='[ flex--middle font--700 pb--0 ]') Is this page useful?
 
-        button(class='[ btn btn--ghost--sm ghost--blk yes ]' value='1') Yes
-        button(class='[ btn btn--ghost--sm ghost--blk no ]' value='0') No
+        button(class='[ btn btn--ghost--sm ghost--blk yes ]' value='1' @click='blurButton($event)') Yes
+        button(class='[ btn btn--ghost--sm ghost--blk no ]' value='0' @click='blurButton($event)') No
 
       div(class='[ report-button ]')
 
         button(class='[ btn btn--ghost--sm ghost--blk ]' x-on:click="open = ! open") Report a problem with this page
 
-    div(class='[ issue__report ][ pt--2 ]' x-show="open")
+    template(x-if='open')
+      div(class='[ issue__report ][ pt--2 ]' )
 
-      hr
+        hr
 
-      form(class='[ issue__form ][ x--narrow pt--2 ]')
+        form(class='[ issue__form ][ x--narrow pt--2 ]')
 
-        div(class='[ mb--1 ]')
+          div(class='[ mb--1 ]')
 
-          h2(class='[ font--3 mb--0.25 ]') Help us improve this website
+            h2(class='[ font--3 mb--0.25 ]') Help us improve this website
 
-          p This is for website feedback only.
+            p This is for website feedback only.
 
-          p Do not use this to report a crime.
+            p Do not use this to report a crime.
 
-          p If you need to tell us about an incident or crime,
-            a(href="") do that here
-            | .
+            p If you need to tell us about an incident or crime,
+              a(href="") do that here
+              | .
 
-          p Do not include any personal information — like your National Insurance or credit card number — in your message.
+            p Do not include any personal information — like your National Insurance or credit card number — in your message.
 
-        +textarea('What were you trying to do?', 'action')
-        +textarea('What went wrong?', 'problem')
+          +textarea('What were you trying to do?', 'action')
+          +textarea('What went wrong?', 'problem')
 
-        div(class='[ flex--end  gc--1 ]')
-          button(class='[ btn btn--ghost--sm ghost--blk ]' x-on:click="open = false") Cancel
-          button(class='[ btn btn--solid--lg solid--blk ]' type='submit') Submit
+          div(class='[ flex--end  gc--1 ]')
+            button(class='[ btn btn--ghost--sm ghost--blk ]' x-on:click="open = ! open") Cancel
+            button(class='[ btn btn--solid--lg solid--blk ]' type='submit') Submit
 
 footer(class='[ footer ]')
 

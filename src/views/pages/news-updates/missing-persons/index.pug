@@ -1,0 +1,17 @@
+extends ../../../layout/_layout
+
+block var
+  - pageTitle = 'Missing'
+  - description = 'This is a template'
+  - missing = 'current'
+  - crumbs = {'Missing':'last'}
+
+block content
+
+  main#main(class='[ main ]')
+
+    include ../../../partials/_hero
+
+    div(class='[ py--5 ]')
+
+      include ../../../components/_paginate

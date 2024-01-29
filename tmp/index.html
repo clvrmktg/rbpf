@@ -21,7 +21,7 @@
     <!-- Site Favicons - START-->
     <!-- Site Favicons - END-->
   </head>
-  <body>
+  <body class="[ grid ]">
     <input id="click" type="checkbox" aria-checked="false" tabindex="0" aria-labelledby="menu-prompt">
     <header class="[ navbar ][ py--0.5 ]">
       <div class="[ callbar ][ mb--0.75 ]">
@@ -42,9 +42,9 @@
         <label class="[ navicon ][ flex--middle ]" id="navicon" for="click"><strong id="menu-prompt">Open the menu</strong><span class="[ bar ]"></span></label>
         <nav class="[ navbar__menu ]">
           <ul class="[ menu ]">
-            <li class="menu__item"><a class="[ menu__link ]" href="#">Services</a></li>
-            <li class="menu__item"><a class="[ menu__link ]" href="#">Crime Prevention</a></li>
-            <li class="menu__item"><a class="[ menu__link ]" href="/about/">About Us</a></li>
+            <li class="menu__item"><a class="[ menu__link ]" href="#">Information</a></li>
+            <li class="menu__item"><a class="[ menu__link ]" href="#">News &amp; Updates</a></li>
+            <li class="menu__item"><a class="[ menu__link ]" href="/about-us/">About Us</a></li>
             <li class="menu__item"><a class="[ menu__link ]" href="/contact-us">Contact</a></li>
           </ul>
         </nav>
@@ -63,7 +63,7 @@
       </header>
       <div class="[ x--wide grid gr--5 py--5 ]">
         <section>
-          <ul class="[ list list--services ][ grid x2--md x3--lg ]">
+          <ul class="[ list list--services ][ grid x2--md x3--lg g--1 ]">
             <li class="[ service ][ py--2 px--1 ]">
               <h2 class="[ font--5 ][ mb--0.5 ]"> <a href="">Request a service</a></h2>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, nostrum voluptate, perspiciatis in beatae asperiores mollitia quibusdam culpa eius quo quae vitae quisquam quidem fugit.</p>
@@ -83,29 +83,43 @@
             <h2>Commitment to Community and Safety</h2>
             <p class="[ font--4 font--500 ]">Grounded in professionalism, integrity, and robust community partnerships, the Royal Bahamas Police Force (RBPF) envisions a Bahamas where safety is paramount, fostering an environment for every individual to thrive.</p>
             <p>At the heart of our mission is a commitment to vigilant protection and proactive community engagement. The RBPF strives to create an atmosphere where residents and visitors alike feel secure, knowing that we are not just enforcers of the law but invested partners in community well-being.</p>
-            <p>Our officers, driven by a genuine concern for the people they serve, work tirelessly to prevent crime, maintain order, and uphold the values of care, respect, and trust.</p><a class="[ btn btn--solid--lg solid--prime ]" href="/about/">Learn More <span class="[ hidden ]">About Us</span></a>
+            <p>Our officers, driven by a genuine concern for the people they serve, work tirelessly to prevent crime, maintain order, and uphold the values of care, respect, and trust.</p><a class="[ btn btn--solid--lg solid--prime ]" href="/about-us/">Learn More <span class="[ hidden ]">About Us</span></a>
           </div>
           <figure class="[]"><img src="" alt=""></figure>
         </section>
         <section>
           <h2>RBPF News &amp; Updates</h2>
-          <div class="[ reel ]"></div>
-          <ul class="[ grid gr--1 ]">
-            <li class="[ reel--post ]">
-              <h3 class="[ font--5 font--400 ]"><a href="/bulletin/post">Safe Driver Awards in Lyford Cay</a></h3><time datetime="2024-01-02">January 2, 2024</time>
-            </li>
-            <li class="[ reel--post ]">
-              <h3 class="[ font--5 font--400 ]"><a href="/bulletin/post">Safe Driver Awards in Lyford Cay</a></h3><time datetime="2024-01-02">January 2, 2024</time>
-            </li>
-            <li class="[ reel--post ]">
-              <h3 class="[ font--5 font--400 ]"><a href="/bulletin/post">Safe Driver Awards in Lyford Cay</a></h3><time datetime="2024-01-02">January 2, 2024</time>
-            </li>
-            <li class="[ reel--post ]">
-              <h3 class="[ font--5 font--400 ]"><a href="/bulletin/post">Safe Driver Awards in Lyford Cay</a></h3><time datetime="2024-01-02">January 2, 2024</time>
-            </li>
-            <li class="[ reel--post ]">
-              <h3 class="[ font--5 font--400 ]"><a href="/bulletin/post">Safe Driver Awards in Lyford Cay</a></h3><time datetime="2024-01-02">January 2, 2024</time>
-            </li>
+          <ul class="[ news ][ grid gc--1 ]">
+            <li class="[ story story--1 ][ grid subgrid mb--2 ]"><a class="[ story__link ][ grid subgrid ]" href="/news-updates/news/post">
+                <h3 class="[ font--4 font--400 o--2 ]">A Heartfelt Visit: Lavaria Storr Meets Commissioner Fernander</h3>
+                <time class="[ o--3 ]" datetime="January 24, 2024">January 24, 2024</time>
+                <figure class="[ story__thumb ][ mb--1 o--1 ]"><img class="[ ratio--1:1 ]" data-twic-src="image:" alt="A Heartfelt Visit: Lavaria Storr Meets Commissioner Fernander">
+                </figure></a></li>
+            <li class="[ story story--2 ][ grid subgrid mb--2 ]"><a class="[ story__link ][ grid subgrid ]" href="/news-updates/news/post">
+                <h3 class="[ font--4 font--400 o--2 ]">Collaborative Session: Urban Renewal Centers Reintegration Meeting</h3>
+                <time class="[ o--3 ]" datetime="January 18, 2024">January 18, 2024</time>
+                <figure class="[ story__thumb ][ mb--1 o--1 ]"><img class="[ ratio--1:1 ]" data-twic-src="image:" alt="Collaborative Session: Urban Renewal Centers Reintegration Meeting">
+                </figure></a></li>
+            <li class="[ story story--3 ][ grid subgrid mb--2 ]"><a class="[ story__link ][ grid subgrid ]" href="/news-updates/news/post">
+                <h3 class="[ font--4 font--400 o--2 ]">10th Annual Majority Rule Day Commemorative Church Service</h3>
+                <time class="[ o--3 ]" datetime="January 11, 2024">January 11, 2024</time>
+                <figure class="[ story__thumb ][ mb--1 o--1 ]"><img class="[ ratio--1:1 ]" data-twic-src="image:" alt="10th Annual Majority Rule Day Commemorative Church Service">
+                </figure></a></li>
+            <li class="[ story story--4 ][ grid subgrid mb--2 ]"><a class="[ story__link ][ grid subgrid ]" href="/news-updates/news/post">
+                <h3 class="[ font--4 font--400 o--2 ]">Promotion Milestone: 10 Senior Officers Elevated to Assistant Commissioner of Police</h3>
+                <time class="[ o--3 ]" datetime="December 13, 2023">December 13, 2023</time>
+                <figure class="[ story__thumb ][ mb--1 o--1 ]"><img class="[ ratio--1:1 ]" data-twic-src="image:" alt="Promotion Milestone: 10 Senior Officers Elevated to Assistant Commissioner of Police">
+                </figure></a></li>
+            <li class="[ story story--5 ][ grid subgrid mb--2 ]"><a class="[ story__link ][ grid subgrid ]" href="/news-updates/news/post">
+                <h3 class="[ font--4 font--400 o--2 ]">59 Years of Women's Contribution: Celebrating Women in Policing</h3>
+                <time class="[ o--3 ]" datetime="November 24, 2023">November 24, 2023</time>
+                <figure class="[ story__thumb ][ mb--1 o--1 ]"><img class="[ ratio--1:1 ]" data-twic-src="image:" alt="59 Years of Women's Contribution: Celebrating Women in Policing">
+                </figure></a></li>
+            <li class="[ story story--6 ][ grid subgrid mb--2 ]"><a class="[ story__link ][ grid subgrid ]" href="/news-updates/news/post">
+                <h3 class="[ font--4 font--400 o--2 ]">Enhancing Safety: RBPF FUSUS Technology Protecting The Bahamas</h3>
+                <time class="[ o--3 ]" datetime="November 24, 2023">November 24, 2023</time>
+                <figure class="[ story__thumb ][ mb--1 o--1 ]"><img class="[ ratio--1:1 ]" data-twic-src="image:" alt="Enhancing Safety: RBPF FUSUS Technology Protecting The Bahamas">
+                </figure></a></li>
           </ul>
         </section>
       </div>
@@ -115,39 +129,41 @@
         <div class="[ issue__bar ][ flex--wrap flex--between--middle ]">
           <div class="[ page-use ][ grid gc--0.5 ]">
             <p class="[ flex--middle font--700 pb--0 ]">Is this page useful?</p>
-            <button class="[ btn btn--ghost--sm ghost--blk yes ]" value="1">Yes</button>
-            <button class="[ btn btn--ghost--sm ghost--blk no ]" value="0">No</button>
+            <button class="[ btn btn--ghost--sm ghost--blk yes ]" value="1" @click="blurButton($event)">Yes</button>
+            <button class="[ btn btn--ghost--sm ghost--blk no ]" value="0" @click="blurButton($event)">No</button>
           </div>
           <div class="[ report-button ]">
             <button class="[ btn btn--ghost--sm ghost--blk ]" x-on:click="open = ! open">Report a problem with this page</button>
           </div>
         </div>
-        <div class="[ issue__report ][ pt--2 ]" x-show="open">
-          <hr>
-          <form class="[ issue__form ][ x--narrow pt--2 ]">
-            <div class="[ mb--1 ]">
-              <h2 class="[ font--3 mb--0.25 ]">Help us improve this website</h2>
-              <p>This is for website feedback only.</p>
-              <p>Do not use this to report a crime.</p>
-              <p>If you need to tell us about an incident or crime,<a href="">do that here</a>.</p>
-              <p>Do not include any personal information — like your National Insurance or credit card number — in your message.</p>
-            </div>
-            <div class="[ form__field ][ grid gr--0.5 ]">
-              <label class="[ form__label ]" for="action">What were you trying to do?
-              </label>
-              <textarea class="[ form_message ]" name="action" id="action" placeholder=""></textarea>
-            </div>
-            <div class="[ form__field ][ grid gr--0.5 ]">
-              <label class="[ form__label ]" for="problem">What went wrong?
-              </label>
-              <textarea class="[ form_message ]" name="problem" id="problem" placeholder=""></textarea>
-            </div>
-            <div class="[ flex--end  gc--1 ]">
-              <button class="[ btn btn--ghost--sm ghost--blk ]" x-on:click="open = false">Cancel</button>
-              <button class="[ btn btn--solid--lg solid--blk ]" type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
+        <template x-if="open">
+          <div class="[ issue__report ][ pt--2 ]">
+            <hr>
+            <form class="[ issue__form ][ x--narrow pt--2 ]">
+              <div class="[ mb--1 ]">
+                <h2 class="[ font--3 mb--0.25 ]">Help us improve this website</h2>
+                <p>This is for website feedback only.</p>
+                <p>Do not use this to report a crime.</p>
+                <p>If you need to tell us about an incident or crime,<a href="">do that here</a>.</p>
+                <p>Do not include any personal information — like your National Insurance or credit card number — in your message.</p>
+              </div>
+              <div class="[ form__field ][ grid gr--0.5 ]">
+                <label class="[ form__label ]" for="action">What were you trying to do?
+                </label>
+                <textarea class="[ form_message ]" name="action" id="action" placeholder=""></textarea>
+              </div>
+              <div class="[ form__field ][ grid gr--0.5 ]">
+                <label class="[ form__label ]" for="problem">What went wrong?
+                </label>
+                <textarea class="[ form_message ]" name="problem" id="problem" placeholder=""></textarea>
+              </div>
+              <div class="[ flex--end  gc--1 ]">
+                <button class="[ btn btn--ghost--sm ghost--blk ]" x-on:click="open = ! open">Cancel</button>
+                <button class="[ btn btn--solid--lg solid--blk ]" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </template>
       </div>
     </footer>
     <footer class="[ footer ]">
@@ -171,9 +187,9 @@
         <div class="[ col--2 ]">
           <nav class="[ navbar__menu ]">
             <ul class="[ menu ]">
-              <li class="menu__item undefined"><a class="[ menu__link ]" href="#">Services</a></li>
-              <li class="menu__item undefined"><a class="[ menu__link ]" href="#">Crime Prevention</a></li>
-              <li class="menu__item undefined"><a class="[ menu__link ]" href="/about/">About Us</a></li>
+              <li class="menu__item undefined"><a class="[ menu__link ]" href="#">Information</a></li>
+              <li class="menu__item undefined"><a class="[ menu__link ]" href="#">News &amp; Updates</a></li>
+              <li class="menu__item undefined"><a class="[ menu__link ]" href="/about-us/">About Us</a></li>
               <li class="menu__item undefined"><a class="[ menu__link ]" href="/contact-us">Contact</a></li>
             </ul>
           </nav>
