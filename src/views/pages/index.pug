@@ -53,8 +53,7 @@ block content
             span(class='[ hidden ]') About Us
 
 
-        figure(class='[ o--1 ]')
-          +img('memorial-day-salute', 'RBPF Memorial Day salute', 'top-left')(class='[ ratio--4:7 ]')
+        +img('salute', 'memorial-day-salute', 'o--1','RBPF Memorial Day salute')(class='[ ratio--4:7 ]')
 
       section()
 
@@ -85,5 +84,4 @@ block content
                   
                   time(class='[ o--3 ]' datetime=story.date)= story.date
                   
-                  figure(class='[ story__thumb ][ mb--1 o--1 ]')
-                    +img(story.img, story.title)(class='[ ratio--1:1 ]')
+                  +img(`thumb--${index + 1}`, story.img, 'story__thumb', story.title, 'mb--1 o--1')(class='[ ratio--1:1 ]')
