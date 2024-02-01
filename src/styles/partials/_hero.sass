@@ -32,8 +32,15 @@
 
 
   &--home
-    height: em(800)
+    +fluid('height', 600, 800)
+    min-height: em(500)
     position: relative
+
+    @media screen and (max-height: 600px)
+      height: 100vh
+
+      @supports (height: 100svh)
+        height: 100svh
 
     > .wrapper
       width: 100%

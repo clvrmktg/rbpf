@@ -2,6 +2,7 @@ doctype html
 
 include ../_var
 include ../utils/_mixins
+include ../utils/_picture
 include ../utils/_icons
 include ../utils/_obscure
 
@@ -23,11 +24,22 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
     meta(name='viewport', content='width=device-width, initial-scale=1.0, viewport-fit=cover')
 
     // Google hreflang Tag
-    link(rel='canonical', href=`${siteUrl}${pageSlug}`)
+    link(rel='canonical', href=`${siteUrl}`)
     
     //- // Preconnect
     //- link(rel='preconnect', href='')
+    link(rel='prefetch' href='https://royalbpf.twic.pics/?v1')
     
+    -
+      images = [
+        {path:'commissioner-fernander-majority-rule', alt:'Commissioner Clayton Fernander at Majority Rule church service', position: 'top-right'},
+        {path:'rbpf-funeral-salute', alt:'ACP saluting fallen officer before committal', position: 'top'},
+        {path:'commissioner-fernander-governor-general-cynthia-pratt', alt:'Commissioner Fernander greeting Her Excellency, Governor General of The Bahamas, Cynthia Pratt', position: 'top-right'},
+        
+      ]
+
+    each img, index in images 
+      +preview(img.path)
   
     //- CSS Loading
     - hash = new Date().getTime()
@@ -38,13 +50,13 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
       link(rel='preload' href='styles/style-version.min.css' as='style')
       link(type='text/css' rel='stylesheet' href='styles/style-version.min.css')
 
-    else
+    if !pro
       link(rel='preload' href= `/styles/style.css?${hash}` as='style')
       link(type='text/css' rel='stylesheet' href=`/styles/style.css?${hash}`)
     //- CSS — END
     
     // Site Scripts — START
-    script(src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer) 
+    script(src='https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js' defer) 
     script(defer src='https://royalbpf.twic.pics/?v1')
     +script('app', true, true, false)
     // Site Scripts — END
