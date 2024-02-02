@@ -68,7 +68,7 @@ block content
               {title:'10th Annual Majority Rule Day Commemorative Church Service', date: 'January 11, 2024', img:'governor-general-commissioner-police'},
               {title:'Promotion Milestone: 10 Senior Officers Elevated to Assistant Commissioner of Police', date: 'December 13, 2023', img:'acp-promotion-milestone'},
               {title:'59 Years of Women\'s Contribution: Celebrating Women in Policing', date: 'November 24, 2023', img:'59-years-women-policing'},
-              {title:'Enhancing Safety: RBPF FUSUS Technology Protecting The Bahamas', date: 'November 24, 2023', img:'security-cameras'},
+              //- {title:'Enhancing Safety: RBPF FUSUS Technology Protecting The Bahamas', date: 'November 24, 2023', img:'security-cameras'},
 
             ]
           
@@ -78,10 +78,12 @@ block content
 
             li(class=`[ story story--${index + 1} ][ grid subgrid mb--2 ]`)
 
-                a(class='[ story__link ][ grid subgrid ]' href='/news-updates/news/post')
+                a(class='[ story__link ][ grid subgrid g--0 ]' href='/news-updates/news/post')
 
-                  h3(class='[ font--4 font--400 o--2 ]')= story.title
+                  div(class='[ story__content ][ pt--1 px--0.5 pb--0.75 o--2 ]')
+
+                    h3(class='[ font--4 font--600 ]')= story.title
+                    
+                    time(class='[ story__date ]' datetime=story.date)= story.date
                   
-                  time(class='[ o--3 ]' datetime=story.date)= story.date
-                  
-                  +img(`thumb--${index + 1}`, story.img, 'story__thumb', story.title, 'mb--1 o--1')(class='[ ratio--1:1 ]')
+                  +img(`thumb--${index + 1}`, story.img, 'story__thumb', story.title, 'o--1')(class='[ ratio--16:9 ]')

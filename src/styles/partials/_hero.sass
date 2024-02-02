@@ -15,6 +15,7 @@
 
   &__content
     height: inherit
+    max-height: inherit
 
   &__banner
     grid-area: banner
@@ -32,26 +33,33 @@
 
 
   &--home
-    +fluid('height', 600, 800)
-    min-height: em(500)
+    min-height: em(400)
+    height: 100svh
     position: relative
 
-    @media screen and (max-height: 600px)
+    @supports not (height: 100svh)
       height: 100vh
 
-      @supports (height: 100svh)
-        height: 100svh
+    +device(desktop)
+      +fluid('max-height', 600, 800)
+
+    > .wrapper, > .slider
+      min-height: inherit
+      height: inherit
+      max-height: inherit
 
     > .wrapper
       width: 100%
-      height: inherit
       position: absolute
       z-index: 3
 
     > .slider
       width: 100%
-      height: inherit
       position: absolute
       top: 0
       left: 0
       z-index: 1
+
+.cta
+  +device(tablet-up)
+    grid-template-columns: repeat(2, max-content) 1fr

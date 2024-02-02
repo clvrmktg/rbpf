@@ -9,8 +9,9 @@ html, body
   overflow-x: clip
 
 body
-  min-height: 100vh
+  +svh(100)
   color: $black
+  // background-color: darken($white, 2%)
   font:
     family: system-ui, sans-serif
     weight: 400
@@ -22,7 +23,6 @@ body
   // color: $white
   background-color: $selected
     
-
 img, svg
   display: block
   width: 100%

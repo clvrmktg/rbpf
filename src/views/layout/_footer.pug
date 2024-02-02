@@ -45,14 +45,38 @@ footer(class='[ issue ][ py--2 ]' x-data="{ open: false }")
 
 footer(class='[ footer ]')
 
-  div(class='[ wrapper ] [ x--wide pt--3 pb--2 ]')
+  div(class='[ wrapper ][ x--wide pt--3 pb--2 ]')
 
-    div(class='[ details ] [ ch--35 ]')
+    div(class='[ details ]')
 
       a(class='[ footer__logo ][ flex--middle pb--1 ]' href='/', aria-label=siteName)
         include ../graphics/_logo
       
-      p The Royal Bahamas Police Force protects and serves the islands and cays of The Bahamas.
+      p(class='[ block ch--35 ]') The Royal Bahamas Police Force protects and serves the islands and cays of The Bahamas.
+
+
+    div 
+
+      address 
+        
+        | RBPF Headquarters
+        br
+        | East Street, North
+        br
+        | P.O.Box N-458
+        br
+        | Nassau, Bahamas
+        br
+        | Business hours
+        br
+        | Monday - Friday 
+        time 8:00 a.m. 
+        time 5:00 p.m.
+        br
+        | Telephone:242-322-4444
+        br
+        | Fax: 242-328-2688
+        br
 
       ul.footer__social.social.flex--middle
 
@@ -80,10 +104,10 @@ footer(class='[ footer ]')
     //-       label(class='form__label')
     //-       input(class='form__input' type='email' placeholder='your@email.com' required=true )
 
-    //-     div(class='[ form__submit ] [ flex--end ]')
+    //-     div(class='[ form__submit ][ flex--end ]')
     //-       input#submit(class='[ btn btn--solid--sm solid--wht ]' type='submit' value='Sign Up')
 
-  //- address(class='[ station ] [ x--wide pb--1 ]')
+  //- address(class='[ station ][ x--wide pb--1 ]')
   //-   span Western Police Station
   //-   span(class='[ breaks ]') ,  
   //-   span John F. Kennedy Drive
@@ -101,9 +125,9 @@ footer(class='[ footer ]')
       |  or
       +emr('919')
   
-  b(class='[ line line--wht ] [ x--wide ]')
+  b(class='[ line line--wht ][ x--wide ]')
 
-  div(class='[ copyright ] [ x--wide flex--between--middle pt--1 pb--2 ]')
+  div(class='[ copyright ][ x--wide flex--between--middle pt--1 pb--2 ]')
 
     small= `© 2020 Royal Bahamas Police Force. All rights reserved.`
 

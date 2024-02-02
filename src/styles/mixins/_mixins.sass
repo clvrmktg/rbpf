@@ -199,21 +199,30 @@ $ratio: (1 + sqrt(5)) / 2
 
 
 =device($size)
-  @if $size == phone-only
+  @if $size == mobile
     @media (max-width: 799px)
       @content
   @else if $size == tablet-up
     @media (min-width: 800px)
       @content
+  @else if $size == tablet
+    @media (min-width: 800px) and (max-width: 1024px)
+      @content
   @else if $size == tablet-or-less
     @media (max-width: 1024px), (max-width: 1366px) and (hover: none)
       @content
-  @else if $size == desktop-up
-    @media (min-width: 1025px) and (hover: hover), (min-width: 1367px) and (hover: hover)
+  @else if $size == desktop
+    @media (min-width: 1025px) and (hover: hover)
       @content
-  @else if $size == big-desktop-up
-    @media (min-width: 1800px)
+  @else if $size == desktop-lg
+    @media (min-width: 1440px)
       @content
+
+=svh($value)
+  min-height: #{$value}svh
+
+  @supports not (height: #{value}svh)
+    min-height: #{value}vh
 
 =ignore
   /* uncss:ignore start */

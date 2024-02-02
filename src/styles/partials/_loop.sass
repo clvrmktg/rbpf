@@ -1,74 +1,120 @@
-+device(desktop-up)
-  .news
-    grid-template-columns: [feature-start four-start] 1fr [four-end five-start]  1fr [ five-end feature-end six-start two-start three-start] 1fr [ six-end two-end three-end ] 
-    grid-template-rows:  [feature-start two-start] 1fr max-content max-content [two-end three-start] 1fr max-content max-content [three-end feature-end four-start five-start six-start ] 1fr max-content max-content [ five-end six-end four-end]
+// +device(desktop-up)
+  // .news
+  //   grid-template-columns: [feature-start four-start] 1fr [four-end five-start]  1fr [ five-end feature-end six-start two-start three-start] 1fr [ six-end two-end three-end ] 
+  //   grid-template-rows:  [feature-start two-start] 1fr max-content max-content [two-end three-start] 1fr max-content max-content [three-end feature-end four-start five-start six-start ] 1fr max-content max-content [ five-end six-end four-end]
 
+
+  // .story--2
+  //   grid-area: two
+
+  // .story--3
+  //   grid-area: three
+
+  // .story--4
+  //   grid-area: four
+
+  // .story--5
+  //   grid-area: five
+
+  // .story--6
+  //   grid-area: six
+
+  // .story
+  //   outline: $bg
+
+  //   @supports (grid-template-rows: subgrid)
+  //     grid-row: span 3
+
+  //     > .story__link
+  //       grid-row: span 3
+
+  //       > h3
+  //         grid-row: span 1
+
+  //       > time
+  //         grid-row: span 1
+
+  //     &__thumb
+  //       grid-row: span 1
+
+  //   &__thumb
+
+  //     > img
+  //       height: 100%
     
-  .story--2
-    grid-area: two
+  // .story--1
+  //   grid-area: feature
 
-  .story--3
-    grid-area: three
+  //   @supports (grid-template-rows: subgrid)
+  //     grid-row: span 6
 
-  .story--4
-    grid-area: four
+  //   > .story__link
 
-  .story--5
-    grid-area: five
+  //     @supports not (grid-template-rows: subgrid)
+  //       grid-template-rows: 1fr max-content max-content
 
-  .story--6
-    grid-area: six
+  //     @supports (grid-template-rows: subgrid)
+  //       grid-row: span 6
 
-  .story
-    outline: $bg
+  //       > h3
+  //         grid-row: span 1
 
-    @supports (grid-template-rows: subgrid)
-      grid-row: span 3
+  //       > time
+  //         grid-row: span 1
 
-      > .story__link
-        grid-row: span 3
-
-        > h3
-          grid-row: span 1
-
-        > time
-          grid-row: span 1
-
-      &__thumb
-        grid-row: span 1
-
-    &__thumb
-
-      > img
-        height: 100%
-    
-  .story--1
-    grid-area: feature
-
-    @supports (grid-template-rows: subgrid)
-      grid-row: span 6
-
-    > .story__link
-
-      @supports not (grid-template-rows: subgrid)
-        grid-template-rows: 1fr max-content max-content
-
-      @supports (grid-template-rows: subgrid)
-        grid-row: span 6
-
-        > h3
-          grid-row: span 1
-
-        > time
-          grid-row: span 1
-
-        > figure
-          grid-row: span 4
-
-
-.subgrid
-  grid-template-rows: subgrid
+  //       > figure
+  //         grid-row: span 4
 
 
 
+// .subgrid
+//   grid-template-rows: subgrid
+
+$stories: (one, two, three, four, five, six)
+.news
+
+  +device(tablet)
+    grid-template-columns: [one-start three-start ] 1fr [three-end one-end two-start four-start] 1fr [two-end four-end]
+    grid-template-rows: [one-start two-start] repeat(2, max-content) [one-end two-end three-start four-start] repeat(2, max-content) [three-end four-end]
+
+  +device(desktop)
+    grid-template-columns: [one-start three-start] repeat(4, 1fr) [three-end four-start] repeat(2, 1fr) [one-end two-start] repeat(2, 1fr) [four-end five-start] repeat(4, 1fr) [five-end two-end]
+    grid-template-rows: [one-start two-start] repeat(2, max-content) [one-end two-end three-start four-start five-start] repeat(2, max-content) [three-end four-end five-end]
+
+.story
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+  transition-duration: 1000ms
+
+
+  @for $i from 1 through length($stories)
+    &--#{$i}
+      +device(tablet-up)
+        grid-area: nth($stories, $i)
+
+      @if $i == 5
+        +device(tablet-or-less)
+          display: none
+
+
+  // &__content
+  //   background-color: white
+    // border: em(1) solid $prime
+    // border-top-width: em(4)
+
+  &__date
+    color: $black
+
+  &__thumb
+    overflow: hidden
+
+    > img
+      height: 100%
+      transition: opacity ease-in-out 300ms, transform ease-in-out 1000ms
+      will-change: opacity, transform
+      transform: scale(1)
+
+  +hover
+
+    img
+      transform: scale(1.15)
 
