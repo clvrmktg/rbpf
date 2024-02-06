@@ -5,6 +5,7 @@ include ../utils/_mixins
 include ../utils/_picture
 include ../utils/_icons
 include ../utils/_obscure
+include ../components/_info
 
 block var
 
@@ -76,15 +77,20 @@ html#page(lang='en' prefix="og: https://ogp.me/ns#")
     //- meta(name="theme-color", content="#ffffff")
     // Site Favicons - END
       
-  body(class='[ grid g--0 ]')
+  body
     
+    include _notice
+
     //-  Include Site Header
-    include _navbar
-    
-    block content
-    
-    //- Include Site Footer
-    include _footer
+    div(class='[ container ][ grid g--0 ]')
+      
+      include _navbar
+      
+      block content
+      
+      //- Include Site Footer
+      include _footer
+
     +script('obscure', false, false, true)
 
     block footer

@@ -83,7 +83,6 @@ $stories: (one, two, three, four, five, six)
 
 .story
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
-  transition-duration: 1000ms
 
 
   @for $i from 1 through length($stories)
@@ -101,8 +100,16 @@ $stories: (one, two, three, four, five, six)
     // border: em(1) solid $prime
     // border-top-width: em(4)
 
+
+  &__title > span
+
+    color: $prime
+    border-bottom: em(2) solid rgba($prime, 0)
+    padding: em(0.5) 0
+    +transition('border-color')
+  
   &__date
-    color: $black
+    color: rgb(74, 72, 68)
 
   &__thumb
     overflow: hidden
@@ -114,6 +121,9 @@ $stories: (one, two, three, four, five, six)
       transform: scale(1)
 
   +hover
+    
+    &__title > span
+      border-color: rgba($prime, 1)
 
     img
       transform: scale(1.15)

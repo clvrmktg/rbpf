@@ -19,12 +19,12 @@ block content
         -
           services = [
             {name: 'Request a service'},
-            {name: 'Become an Officer'},
+            {name: 'Become a PC'},
             {name: 'Contact the Media Office'},
 
           ]
 
-        ul(class='[ list list--services ][ grid x2--md x3--lg g--1 ]')
+        ul(class='[ list list--services ][ grid x2--md x3--lg gc--1.5 gr--2 ]')
 
           each item, service in services
 
@@ -37,7 +37,7 @@ block content
               p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam, nostrum voluptate, perspiciatis in beatae asperiores mollitia quibusdam culpa eius quo quae vitae quisquam quidem fugit.
 
 
-      section(class='[ grid x2--md gc--2 ]')
+      section(class='[ grid x2--md gc--1.5 ]')
 
         div(class='[ o--2 ]')
 
@@ -60,7 +60,7 @@ block content
         h2 RBPF News &amp; Updates
 
 
-        ul(class='[ news ][ grid gc--1 gr--0 ]')
+        ul(class='[ news ][ grid gc--1.5 gr--0 ]')
           - 
             news = [
               {title:'A Heartfelt Visit: Lavaria Storr Meets Commissioner Fernander', date: 'January 24, 2024', img:'commissioner-clayton-fernander-lavaria-storr-courtesy-visit'},
@@ -82,7 +82,8 @@ block content
 
                   div(class='[ story__content ][ pt--1 px--0.5 pb--0.75 o--2 ]')
 
-                    h3(class='[ font--4 font--600 ]')= story.title
+                    h3(class='[ story__title ][ inline font--4 font--600 ]')
+                      span(class='[ in-bl ]')= story.title
                     
                     time(class='[ story__date ]' datetime=story.date)= story.date
                   

@@ -1,5 +1,5 @@
-body.grid
-  grid-template-columns: [navbar-start main-start issue-start footer-start] minmax(#{em(280), 1fr}) [navbar-end main-end issue-end footer-end]
+.container
+  grid-template-columns: [navbar-start main-start issue-start footer-start] minmax(#{em(280), 1fr}) [ footer-end issue-end main-end navbar-end]
   grid-template-rows: [navbar-start] max-content [navbar-end main-start] 1fr [main-end issue-start] max-content [ issue-end footer-start] max-content [footer-end]
 
 .navbar
@@ -13,6 +13,8 @@ body.grid
 
 .footer
   grid-area: footer
+
+
 
 .sidebar--left
   grid-template-columns: [sidebar-start] 1fr [sidebar-end content-start] 3fr [content-end]
