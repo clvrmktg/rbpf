@@ -34,11 +34,15 @@
 
   &--home
     min-height: em(400)
-    height: 100svh
+    height: calc(100svh - #{em(200)})
     position: relative
 
     @supports not (height: 100svh)
-      height: 100vh
+      height: calc(100vh - #{em(200)})
+
+      +device(tablet-or-less)
+        height: calc(100vh - #{em(140)})
+
 
     +device(desktop)
       +fluid('max-height', 600, 800)
